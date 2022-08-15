@@ -1,0 +1,36 @@
+[submodule "pack/plugins/start/conjure"]
+	path = pack/plugins/start/conjure
+	url = https://github.com/Olical/conjure.git
+[submodule "pack/plugins/start/coq_nvim"]
+	path = pack/plugins/start/coq_nvim
+	url = https://github.com/ms-jpq/coq_nvim.git
+[submodule "pack/plugins/start/coq.artifacts"]
+	path = pack/plugins/start/coq.artifacts
+	url = https://github.com/ms-jpq/coq.artifacts.git
+[submodule "pack/plugins/start/nightfox.nvim"]
+	path = pack/plugins/start/nightfox.nvim
+	url = https://github.com/EdenEast/nightfox.nvim.git
+[submodule "pack/plugins/start/nvim-lspconfig"]
+	path = pack/plugins/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig.git
+[submodule "pack/plugins/start/nvim-treesitter-refactor"]
+	path = pack/plugins/start/nvim-treesitter-refactor
+	url = https://github.com/nvim-treesitter/nvim-treesitter-refactor.git
+[submodule "pack/plugins/start/nvim-treesitter-textobjects"]
+	path = pack/plugins/start/nvim-treesitter-textobjects
+	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
+[submodule "pack/plugins/start/nvim-treesitter"]
+	path = pack/plugins/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter.git
+[submodule "pack/plugins/start/vim-sandwich"]
+	path = pack/plugins/start/vim-sandwich
+	url = https://github.com/machakann/vim-sandwich.git
+[submodule "pack/plugins/start/vim-commentary"]
+	path = pack/plugins/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "pack/plugins/start/vim-dispatch"]
+	path = pack/plugins/start/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+[submodule "pack/plugins/start/zepl.vim"]
+	path = pack/plugins/start/zepl.vim
+	url = https://github.com/axvr/zepl.vim.git
