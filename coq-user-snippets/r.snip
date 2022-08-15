@@ -1,0 +1,13 @@
+snippet groupby_summarize
+alias gbs
+    group_by(${1:groupings}) %>%
+    summarize(${2:sums})
+
+snippet groupby_mutate
+alias gbm
+    group_by(${1:groupings}) %>%
+    mutate(${2:sums})
+
+snippet across
+alias acr
+    across(c(${1:columns}), ${2:function})
