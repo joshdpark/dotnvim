@@ -41,14 +41,14 @@ setlocal grepformat=%f:%l:%c:%m,%f:%l:%m
 " Lua Configuration
 lua <<EOF
 
-local options = {
+local nightfox_options = {
     styles = {
       constants = "bold",
       functions = "bold",
       }
   }
 
-require('nightfox').setup({ options = options })
+require('nightfox').setup({ options = nightfox_options })
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
@@ -84,14 +84,6 @@ local lsp_flags = {
 require('lspconfig')['pylsp'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
-}
-require('lspconfig')['r_language_server'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    settings={r={lsp={
-        diagnostics = true,
-        rich_documentation = false,
-    }}}
 }
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
@@ -133,6 +125,8 @@ require'nvim-treesitter.configs'.setup {
         ["if"] = "@function.inner",
         ["ac"] = "@class.outer",
         ["ic"] = "@class.inner",
+        ["ak"] = "@call.outer",
+        ["ik"] = "@call.inner",
       },
     },
     lsp_interop = {
@@ -170,4 +164,3 @@ EOF
 colorscheme dawnfox
 highlight TrailingWhitespace guibg=DarkMagenta
 call matchadd("TrailingWhitespace", '\v\s+$')
-
