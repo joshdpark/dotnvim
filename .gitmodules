@@ -34,3 +34,6 @@
 [submodule "pack/plugins/start/zepl.vim"]
 	path = pack/plugins/start/zepl.vim
 	url = https://github.com/axvr/zepl.vim.git
+[submodule "pack/plugins/opt/asyncrun.vim"]
+	path = pack/plugins/opt/asyncrun.vim
+	url = https://github.com/skywind3000/asyncrun.vim.git
