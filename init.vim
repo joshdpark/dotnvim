@@ -1,4 +1,5 @@
 set nowrap lazyredraw ignorecase splitright splitbelow termguicolors
+set wildmode=longest:full,full
 set dir=~/tmp
 set conceallevel=2
 set path=.,,         " don't include /usr/include in path
