@@ -37,3 +37,6 @@
 [submodule "pack/plugins/opt/asyncrun.vim"]
 	path = pack/plugins/opt/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim.git
+[submodule "pack/plugins/opt/playground"]
+	path = pack/plugins/opt/playground
+	url = https://github.com/nvim-treesitter/playground.git
