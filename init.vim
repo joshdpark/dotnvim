@@ -53,8 +53,8 @@ require('nightfox').setup({ options = nightfox_options })
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
--- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
--- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
@@ -66,8 +66,8 @@ local on_attach = function(client, bufnr)
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
@@ -86,9 +86,13 @@ require('lspconfig')['pylsp'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
+require'lspconfig'.hls.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = {"vim", "lua", "markdown", "bash", "sql", "json", "r", "python", "fennel"},
+  ensure_installed = {"r", "python", "haskell"},
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
   -- List of parsers to ignore installing (for "all")
@@ -108,7 +112,7 @@ require'nvim-treesitter.configs'.setup {
     navigation = {
       enable = true,
       keymaps = {
-        goto_definition_lsp_fallback = "gd",
+        goto_definition_lsp_fallback = "<leader>gd",
         list_definitions_toc = "gO",
         goto_next_usage = "]k",
         goto_previous_usage = "[k",

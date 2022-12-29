@@ -9,6 +9,6 @@ setlocal errorformat=
             \%Z%.%#,
             \%+G%.%#
 setlocal makeprg=R\ --no-save\ -s\ -e\ \'source(\"$*\")\'
-let g:repl_config = { 'r': {'cmd':'R'} }
+let g:repl_config = {'r': {'cmd':'R', 'load_file' : 'source("%s")'}}
 let r_syntax_fun_pattern = 1
 inoremap <F3> %>%
