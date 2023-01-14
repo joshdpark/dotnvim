@@ -1,15 +1,6 @@
 [submodule "pack/plugins/start/conjure"]
 	path = pack/plugins/start/conjure
 	url = https://github.com/Olical/conjure.git
-[submodule "pack/plugins/start/coq_nvim"]
-	path = pack/plugins/start/coq_nvim
-	url = https://github.com/ms-jpq/coq_nvim.git
-[submodule "pack/plugins/start/coq.artifacts"]
-	path = pack/plugins/start/coq.artifacts
-	url = https://github.com/ms-jpq/coq.artifacts.git
-[submodule "pack/plugins/start/nightfox.nvim"]
-	path = pack/plugins/start/nightfox.nvim
-	url = https://github.com/EdenEast/nightfox.nvim.git
 [submodule "pack/plugins/start/nvim-lspconfig"]
 	path = pack/plugins/start/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
@@ -37,6 +28,6 @@
 [submodule "pack/plugins/opt/asyncrun.vim"]
 	path = pack/plugins/opt/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim.git
-[submodule "pack/plugins/opt/playground"]
-	path = pack/plugins/opt/playground
-	url = https://github.com/nvim-treesitter/playground.git
+[submodule "pack/plugins/opt/vim-paper"]
+	path = pack/plugins/opt/vim-paper
+	url = https://gitlab.com/yorickpeterse/vim-paper.git

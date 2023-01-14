@@ -16,7 +16,6 @@ inoremap <M-m> %>%
 tnoremap <C-w> <C-\><C-n><C-w>
 nmap <leader>f :lexpr system('fd -td ')<left><left>
 nmap <leader>ap :silent let &path=expand('<cfile>')..","..&path<CR>
-let g:coq_settings = { 'display.icons.mode': 'none' }
 
 nmap <c-c><c-c> gzap}
 runtime zepl/contrib/python.vim  " Enable the Python contrib module.
@@ -42,14 +41,6 @@ setlocal grepformat=%f:%l:%c:%m,%f:%l:%m
 " Lua Configuration
 lua <<EOF
 
-local nightfox_options = {
-    styles = {
-      constants = "bold",
-      functions = "bold",
-      }
-  }
-
-require('nightfox').setup({ options = nightfox_options })
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
@@ -61,7 +52,7 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
-  -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -147,6 +138,6 @@ require'nvim-treesitter.configs'.setup {
 
 EOF
 
-colorscheme dawnfox
+colorscheme paper
 highlight TrailingWhitespace guibg=DarkMagenta
 call matchadd("TrailingWhitespace", '\v\s+$')
