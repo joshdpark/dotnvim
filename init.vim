@@ -11,8 +11,6 @@ set regexpengine=2   " set the default regexp engine (mac will freeze up with de
 
 packadd! matchit
 let maplocalleader=","
-map Q <C-w>c
-inoremap <M-m> %>%
 tnoremap <C-w> <C-\><C-n><C-w>
 nmap <leader>f :lexpr system('fd -td ')<left><left>
 nmap <leader>ap :silent let &path=expand('<cfile>')..","..&path<CR>
@@ -35,8 +33,10 @@ augroup init
     autocmd FileType sql setlocal formatprg=pg_format\ -
 augroup END
 
-setlocal grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
-setlocal grepformat=%f:%l:%c:%m,%f:%l:%m
+if executable('rg') " if ripgrep is installed
+    setlocal grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+    setlocal grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
 
 " Lua Configuration
 lua <<EOF
@@ -77,7 +77,7 @@ require('lspconfig')['pylsp'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
-require'lspconfig'.hls.setup{
+require('lspconfig').hls.setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
@@ -135,9 +135,22 @@ require'nvim-treesitter.configs'.setup {
     },
   },
 }
-
 EOF
 
-colorscheme paper
+" for checking a highlight group
+function! SynGroup()
+    let l:s = synID(line('.'), col('.'), 1)
+    echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfun
+
+" removes trailing whitespace
+function TrimWhiteSpace()
+    %s/\s*$//
+    ''
+endfunction
+command TrimWhiteSpace call TrimWhiteSpace()
+
+
+colorscheme monstera
 highlight TrailingWhitespace guibg=DarkMagenta
 call matchadd("TrailingWhitespace", '\v\s+$')
